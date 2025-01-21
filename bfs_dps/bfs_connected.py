@@ -50,4 +50,7 @@ def bfs_from_edge_list(
 if __name__ == '__main__':
     from random import randint
     # A: given an edge list, return the order of visited nodes in a breadth-first search
-    edge_list = [(randint(0, 10), randint(0, 10)) for _ in range(10)]
+    edge_list = [(randint(0, 10), randint(0, 10)) for _ in range(20)]
+    print(edge_list)
+    order = bfs_from_edge_list(edge_list)
+    print(order)
