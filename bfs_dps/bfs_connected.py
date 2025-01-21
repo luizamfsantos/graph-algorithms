@@ -45,7 +45,34 @@ def bfs_from_edge_list(
 
     return order
 
+# SITUATION B: given an adjacency matrix, return the
+# order of visited nodes in a breadth-first search
 
+def bfs_from_adjacency_matrix(
+    adjacency_matrix: list[list[int]]
+) -> list[int]:
+    # null case
+    if not adjacency_matrix:
+        return []
+
+    # number of nodes = len(adjacency_matrix)
+    n = len(adjacency_matrix)
+    
+    # row number = node number
+    # start the search at the first node
+    queue = deque([0])
+    visited = {0}
+    order = [0]
+    
+    while queue:
+        node = queue.popleft()
+        for j in range(n):
+            if adjacency_matrix[node][j] and j not in visited:
+                visited.add(j)
+                order.append(j)
+                queue.append(j)
+
+    return order
 
 if __name__ == '__main__':
     from random import randint
