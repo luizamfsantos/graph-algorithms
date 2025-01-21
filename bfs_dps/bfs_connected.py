@@ -13,7 +13,7 @@ def create_adjacency_dict_from_edge_list(
         if node2 not in adjacency_dict:
             adjacency_dict[node2] = []
         adjacency_dict[node1].append(node2)
-        adjacency_dict[node2].append(node1)
+        adjacency_dict[node2].append(node1) # assuming undirected graph
     return adjacency_dict
 
 def bfs_from_edge_list(
